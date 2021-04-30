@@ -1072,3 +1072,11 @@ System memory in use after: 136.2 MB.
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1714.
 Total: 1.650395 ms (FindLiveObjects: 0.187371 ms CreateObjectMapping: 0.037296 ms MarkObjects: 1.381746 ms  DeleteObjects: 0.042905 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 540.220335 seconds.
+  path: Assets/Prefabs/Obstacle.prefab
+  artifactKey: Guid(299291d1a7eb54392954d2c704146c4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Obstacle.prefab using Guid(299291d1a7eb54392954d2c704146c4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59da48024df4bde44ea8e44dd10406de') in 0.054980 seconds
+  Import took 0.057202 seconds .
+
