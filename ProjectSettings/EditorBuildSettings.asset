@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Fly Over.unity
+    guid: f6bb33a8a9cb64f73817fb25d9bedac2
+  - enabled: 1
+    path: Assets/Scenes/Fly Under.unity
+    guid: 658ef3b5f3da94697bc1e84cfd89507a
+  - enabled: 1
+    path: Assets/Scenes/Moon Landing.unity
+    guid: 92ac5a6395585429da946f62988bdd90
   m_configObjects: {}
