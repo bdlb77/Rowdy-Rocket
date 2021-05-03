@@ -13,16 +13,21 @@ public class CollisionHandler : MonoBehaviour
 
     // if currently transitioning, don't do things (don't allow to move, play audio, etc)
     bool isTransitioning = false;
-
+    bool collisionDisabled = false;
     int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
     
     void Start() 
     {
         audioSource = GetComponent<AudioSource>();
     }
+    
+    void Update() {
+        // Disable by default
+        // RespondToDebugKeys();
+    }
     void OnCollisionEnter(Collision other)
     {
-        if (isTransitioning) return;
+        if (isTransitioning || collisionDisabled) return;
 
         switch (other.gameObject.tag)
         {
@@ -61,6 +66,20 @@ public class CollisionHandler : MonoBehaviour
         audioSource.PlayOneShot(crashAudio);
         GetComponent<Movement>().enabled = false;
         Invoke("reloadLevel", sceneDelaySecs);
+    }
+    void RespondToDebugKeys()
+    {
+        // Once L is pressed (GetKeyDown)
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            loadNextLevel();
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            collisionDisabled = !collisionDisabled; // Toggle Collision
+
+
+        }
     }
     void reloadLevel()
     {

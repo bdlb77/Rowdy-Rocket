@@ -12,6 +12,9 @@ public class Movement : MonoBehaviour
     [SerializeField] float mainThrust = 1000;
     [SerializeField] float sideThrust = 200;
     [SerializeField] AudioClip mainEngine;
+    [SerializeField] ParticleSystem mainBooster;
+    [SerializeField] ParticleSystem leftBooster;
+    [SerializeField] ParticleSystem rightBooster;
 
     // CACHE
     Rigidbody rb ;
@@ -32,38 +35,76 @@ public class Movement : MonoBehaviour
         ProcessRotation();
     }
 
-    private void ProcessThrust()
+    void ProcessThrust()
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(mainEngine);
-            }
-            rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+            StartThrusting();
         }
         else
         {
-            audioSource.Stop();
-
+            StopThrusting();
         }
-        
     }
-
-    private void ProcessRotation()
+    
+    void StartThrusting()
+    {
+    if (!audioSource.isPlaying)
+    {
+        audioSource.PlayOneShot(mainEngine);
+    }
+    if (!mainBooster.isPlaying)
+    {
+        mainBooster.Play();
+    }
+    rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
+    }
+    void StopThrusting()
+    {
+        audioSource.Stop();
+        mainBooster.Stop();
+    }
+    void ProcessRotation()
     {
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            ApplyRotation(sideThrust);
-
+            RotateLeft();
         }
         else if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            ApplyRotation(-sideThrust);
+            RotateRight();
+        }
+        else
+        {
+            StopRotating();
         }
     }
 
-    private void ApplyRotation(float rotationThisFrame)
+    void RotateRight()
+    {
+        if (!leftBooster.isPlaying)
+        {
+            leftBooster.Play();
+        }
+        ApplyRotation(-sideThrust);
+    }
+
+    void RotateLeft()
+    {
+        if (!rightBooster.isPlaying)
+        {
+            rightBooster.Play();
+        }
+        ApplyRotation(sideThrust);
+    }
+
+    void StopRotating()
+    {
+        leftBooster.Stop();
+        rightBooster.Stop();
+    }
+    
+    void ApplyRotation(float rotationThisFrame)
     {
         rb.freezeRotation = true; // freeze rotation to allow for manual rotation
         transform.Rotate(Vector3.forward * rotationThisFrame * Time.deltaTime);
