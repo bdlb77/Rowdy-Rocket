@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 8ab26984c54b447fda1564c7b439dcd1, type: 2}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
@@ -140,6 +140,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58cf79047f444ddcb9cc516f90a4071, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneDelaySecs: 2
+  crashAudio: {fileID: 0}
+  successAudio: {fileID: 0}
+  crashParticles: {fileID: 0}
+  successParticles: {fileID: 0}
 --- !u!1001 &492418241
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -97,8 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 69a857c32e19f45599e01288e3014ca2, type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: a13cecad48d7f471eaf31e063990861e, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -123,23 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &287901384 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1110851485567623109, guid: c04975a4b7f5f463a8f12c551ac186ad, type: 3}
-  m_PrefabInstance: {fileID: 1769725983}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &287901392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 287901384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58cf79047f444ddcb9cc516f90a4071, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &492418241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -214,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 39208e3de5cc64452a639b22191ec73b, type: 2}
     - target: {fileID: 8943815308999569713, guid: 32d87aa6e6278485bb96dc94f8b66f60, type: 3}
       propertyPath: m_Name
-      value: LaunchPad (1)
+      value: LandingPad
       objectReference: {fileID: 0}
     - target: {fileID: 8943815308999569713, guid: 32d87aa6e6278485bb96dc94f8b66f60, type: 3}
       propertyPath: m_TagString
@@ -436,7 +419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.041275807, y: -0, z: -0, w: 0.99914783}
-  m_LocalPosition: {x: 1.61, y: 5.69, z: -10.96}
+  m_LocalPosition: {x: 1.55, y: 8.18, z: -14.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -506,17 +489,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 287901391, guid: c04975a4b7f5f463a8f12c551ac186ad, type: 3}
-      propertyPath: m_PlayOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1110851485567623109, guid: c04975a4b7f5f463a8f12c551ac186ad, type: 3}
       propertyPath: m_Name
       value: Rocket
-      objectReference: {fileID: 0}
-    - target: {fileID: 1110851485567623109, guid: c04975a4b7f5f463a8f12c551ac186ad, type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6952645566410986731, guid: c04975a4b7f5f463a8f12c551ac186ad, type: 3}
       propertyPath: m_RootOrder
@@ -528,7 +503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6952645566410986731, guid: c04975a4b7f5f463a8f12c551ac186ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.43
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 6952645566410986731, guid: c04975a4b7f5f463a8f12c551ac186ad, type: 3}
       propertyPath: m_LocalPosition.z

@@ -4,31 +4,41 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    // PARAMETERS - tuning, typically set in editory
+    // CACHE - e.g. references for readability or speed
+    // STATE - private instance (member) variables
+
+    // PARAMETERS
     [SerializeField] float mainThrust = 1000;
     [SerializeField] float sideThrust = 200;
+    [SerializeField] AudioClip mainEngine;
+
+    // CACHE
     Rigidbody rb ;
     AudioSource audioSource;
-    // Start is called before the first frame update
+    
+    // STATE
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+
     }
 
-    // Update is called once per frame
     void Update()
     {
         ProcessThrust();
         ProcessRotation();
     }
 
-    void ProcessThrust()
+    private void ProcessThrust()
     {
         if (Input.GetKey(KeyCode.Space))
         {
             if (!audioSource.isPlaying)
             {
-                audioSource.Play();
+                audioSource.PlayOneShot(mainEngine);
             }
             rb.AddRelativeForce(Vector3.up * mainThrust * Time.deltaTime);
         }
@@ -40,7 +50,7 @@ public class Movement : MonoBehaviour
         
     }
 
-    void ProcessRotation()
+    private void ProcessRotation()
     {
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
