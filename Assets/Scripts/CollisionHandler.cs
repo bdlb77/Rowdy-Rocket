@@ -50,9 +50,9 @@ public class CollisionHandler : MonoBehaviour
     {
         isTransitioning = true;
         // TODO add particle effect upon success
+        successParticles.Play();
         audioSource.Stop();
         audioSource.PlayOneShot(successAudio);
-        successParticles.Play();
         GetComponent<Movement>().enabled = false;
         Invoke("loadNextLevel", sceneDelaySecs);
 
